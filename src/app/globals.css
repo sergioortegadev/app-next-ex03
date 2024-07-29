@@ -18,16 +18,29 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+@layer components {
+  .cards {
+    @apply flex flex-wrap justify-around;
+  }
+  .card {
+    @apply flex flex-col w-60 p-4 m-2 text-center bg-slate-400 border-4 rounded-2xl border-transparent hover:border-slate-600;
+  }
+  .card figcaption {
+    @apply text-2xl;
+  }
+  .card h4 {
+    @apply text-lg font-bold;
+  }
+
+  .button-blue {
+    @apply text-sm px-2 py-1 m-2 rounded-lg border-2 border-transparent hover:border-blue-700 bg-blue-500 hover:bg-blue-600;
   }
 }
