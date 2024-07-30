@@ -41,6 +41,9 @@ body {
   }
 
   .button-blue {
-    @apply text-sm px-2 py-1 m-2 rounded-lg border-2 border-transparent hover:border-blue-700 bg-blue-500 hover:bg-blue-600;
+    @apply text-sm px-2 py-1 m-2 rounded-lg border-2 border-transparent hover:border-blue-700 bg-blue-500 hover:bg-blue-600 outline-none focus:border-blue-700;
+  }
+  .input {
+    @apply px-2 m-1 outline-none text-gray-700 bg-slate-100 rounded-[.25rem];
   }
 }
