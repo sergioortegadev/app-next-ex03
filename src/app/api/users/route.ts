@@ -1,6 +1,6 @@
 import { connectDB } from "@/libs/mongodb";
 import User from "@/models/user";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 export async function GET() {
   await connectDB();
@@ -9,7 +9,7 @@ export async function GET() {
   return NextResponse.json(users);
 }
 
-export async function POST(request) {
+export async function POST(request: NextRequest) {
   await connectDB();
   const data = await request.json();
 

@@ -4,7 +4,13 @@ import { connectDB } from "@/libs/mongodb";
 import User from "@/models/user";
 import NewUsersForm from "@/components/NewUsersForm";
 
-async function loadUsers() {
+interface IUser {
+  _id: string;
+  firstName: string;
+  lastName: string;
+}
+
+async function loadUsers(): Promise<IUser[]> {
   await connectDB();
   const users = await User.find();
 
@@ -25,7 +31,7 @@ export default async function Home() {
             [ DB empty ]
           </h3>
         ) : (
-          users.map((user: object[]) => (
+          users.map((user: IUser) => (
             <figure key={user._id} className="card">
               <Image
                 src={`https://i.pravatar.cc/200?u=${user._id}`}

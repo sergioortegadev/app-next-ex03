@@ -18,7 +18,7 @@ export default function NewUsersForm() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(postUser(newUser));
+    postUser(newUser);
   }
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
